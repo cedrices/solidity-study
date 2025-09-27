@@ -13,6 +13,30 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256[]",
+						"name": "arr",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "target",
+						"type": "uint256"
+					}
+				],
+				"name": "binarySearch",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "addr",
 						"type": "address"
@@ -27,6 +51,30 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "nums1",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "nums2",
+						"type": "uint256[]"
+					}
+				],
+				"name": "mergeIntoNewArray",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
@@ -91,6 +139,25 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "roman",
+						"type": "string"
+					}
+				],
+				"name": "romanToInt",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
@@ -173,11 +240,11 @@
 	},
 	"sources": {
 		"TaskOne.sol": {
-			"keccak256": "0xdeb4ad77329e3bb09a0b9248df24bfdb203741e47d858649e2b1ad9f0a6c50e8",
+			"keccak256": "0x1faaab66edbd3595a1dc73c672e84c402000b927261d326c44dada29fa53bcae",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3a49f59201746469f4ffadec0c566f4cd77dca6d36c92b18f0c3a876b2d2f2e8",
-				"dweb:/ipfs/QmVJGwf8JemRxjM9mf4rtQHD7cDyrxN5TT341daFbwoXH4"
+				"bzz-raw://4206aff3b4468b2941cb1470746164959c7be5778e1d28dd56536bc7328579db",
+				"dweb:/ipfs/QmWq2b3dMnZeEF3bkuyknUfBPDve4hREJC7VgzWaXEn7UK"
 			]
 		}
 	},

@@ -36,7 +36,7 @@ contract Voting {
             return string(dest);
     }
 
-    //
+    //*************========== 整形转罗马字符串  begin ======================
     mapping(uint => string) public romanNum;
     
     constructor () public {
@@ -56,7 +56,7 @@ contract Voting {
     }
     
    
-    
+   
     function numToRoman(string memory param) public view returns(string memory result) {
         
         bytes memory bs = bytes(param);
@@ -105,5 +105,102 @@ contract Voting {
                  result = string.concat(result,romanNum[key]);
              }
              return result;
+    }
+   //*************========== 整形转罗马字符串  end ======================
+  
+
+  //*************========== 罗马字符串转整形  begin ======================
+   function romanToInt(string memory roman) public pure returns (uint256) {
+        bytes memory r = bytes(roman);
+        uint256 result = 0;
+
+        for (uint256 i = 0; i < r.length; i++) {
+            uint256 current = charToValue(r[i]);
+
+            // 检查下一个字符是否存在，并判断是否为“减法”情况
+            if (i + 1 < r.length) {
+                uint256 next = charToValue(r[i + 1]);
+                if (current < next) {
+                    result -= current; // 减法情况：IV, IX, XL, XC, CD, CM
+                } else {
+                    result += current;
+                }
+            } else {
+                result += current; // 最后一个字符，直接加
+            }
+        }
+
+        return result;
+    }
+
+
+    function charToValue(bytes1 c) internal pure returns (uint256) {
+        if (c == 'I') return 1;
+        if (c == 'V') return 5;
+        if (c == 'X') return 10;
+        if (c == 'L') return 50;
+        if (c == 'C') return 100;
+        if (c == 'D') return 500;
+        if (c == 'M') return 1000;
+        return 0; // 无效字符（可选：revert 抛出错误）
+    }
+    //*************========== 罗马字符串转整形  end ======================
+
+
+    //****========= 合并两个有序数组 (Merge Sorted Array) =========
+    function mergeIntoNewArray(uint256[] memory nums1, uint256[] memory nums2) public pure returns (uint256[] memory) {
+        uint256 m = nums1.length;
+        uint256 n = nums2.length;
+        uint256[] memory result = new uint256[](m + n);
+
+        uint256 i = 0;
+        uint256 j = 0;
+        uint256 k = 0;
+
+        while (i < m && j < n) {
+            if (nums1[i] <= nums2[j]) {
+                result[k] = nums1[i];
+                i++;
+            } else {
+                result[k] = nums2[j];
+                j++;
+            }
+            k++;
+        }
+
+        // 复制剩余元素
+        while (i < m) {
+            result[k] = nums1[i];
+            i++;
+            k++;
+        }
+
+        while (j < n) {
+            result[k] = nums2[j];
+            j++;
+            k++;
+        }
+
+        return result;
+    }
+
+    //********====  二分查找 (Binary Search)在一个有序数组中查找目标值。
+     function binarySearch(uint256[] memory arr, uint256 target) public pure returns (uint256) {
+        uint256 left = 0;
+        uint256 right = arr.length; // 注意：right 是开区间，即 arr.length
+
+        while (left < right) {
+            uint256 mid = left + (right - left) / 2; // 防止整数溢出
+
+            if (arr[mid] == target) {
+                return mid;
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid; // 因为 right 是开区间
+            }
+        }
+
+        return type(uint256).max; // 未找到，返回最大值表示 not found
     }
 }
