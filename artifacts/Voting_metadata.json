@@ -240,11 +240,11 @@
 	},
 	"sources": {
 		"TaskOne.sol": {
-			"keccak256": "0x1faaab66edbd3595a1dc73c672e84c402000b927261d326c44dada29fa53bcae",
+			"keccak256": "0x96304009bd4202b970c5be41e2275c96caeb85908734100c76f07e385ad65e97",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4206aff3b4468b2941cb1470746164959c7be5778e1d28dd56536bc7328579db",
-				"dweb:/ipfs/QmWq2b3dMnZeEF3bkuyknUfBPDve4hREJC7VgzWaXEn7UK"
+				"bzz-raw://726985bc7df444dcdb7bf62b5dbef64e424ba77da563a750a87e5f96c8d3f5a2",
+				"dweb:/ipfs/QmPepAkb8XKathvq2deqGM1g8AwzyZSRNXwzubZCVRgnFm"
 			]
 		}
 	},

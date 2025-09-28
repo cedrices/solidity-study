@@ -121,7 +121,8 @@ contract Voting {
             if (i + 1 < r.length) {
                 uint256 next = charToValue(r[i + 1]);
                 if (current < next) {
-                    result -= current; // 减法情况：IV, IX, XL, XC, CD, CM
+                    result = next - current; // 减法情况：IV, IX, XL, XC, CD, CM
+                    i = i + 1;
                 } else {
                     result += current;
                 }
